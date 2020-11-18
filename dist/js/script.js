@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	//Таймер
 
-	let deadline = '2020-11-18';
+	let deadline = '2020-11-14';
 	let timeOffset = new Date().getTimezoneOffset() * 60000;
 
 	function getTimerRemaining(endTime) {
@@ -102,33 +102,6 @@ window.addEventListener("DOMContentLoaded", function () {
 	}
 
 	setClock("timer", deadline);
-
-	//Модальные окна
-
-	let modal = document.querySelector(".more"),
-		overlay = document.querySelector(".overlay"),
-		close = document.querySelector(".popup-close"),
-		descriptionBtn = document.getElementsByClassName("description-btn");
-
-	function showModal() {
-		overlay.style.display = "block";
-		overlay.classList.add("more-splash");
-		document.body.style.overflow = "hidden";
-	}
-
-	modal.addEventListener("click", showModal);
-
-	close.addEventListener("click", function () {
-		overlay.style.display = "none";
-		this.classList.remove("more-splash");
-		document.body.style.overflow = "auto";
-	});
-
-	for (let b of descriptionBtn) {
-		b.addEventListener("click", showModal);
-	}
-
-
 
 
 
